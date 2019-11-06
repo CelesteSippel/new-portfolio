@@ -4,8 +4,21 @@ import Nav from "./components/nav"
 import Profile from "./images/profile.jpg"
 import GameStarter from "./images/GameStarter.gif"
 import RecipeSearch from "./images/RecipeSearch.gif"
+import Resume from "./images/JessicaResume.pdf"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons"
+import {
+  faDownload,
+  faEnvelope,
+  faHeart
+} from "@fortawesome/free-solid-svg-icons"
 
 const App = () => {
+  const linkedIn = <FontAwesomeIcon icon={faLinkedin} />
+  const gitHub = <FontAwesomeIcon icon={faGithub} />
+  const download = <FontAwesomeIcon icon={faDownload} />
+  const envelope = <FontAwesomeIcon icon={faEnvelope} />
+  const heart = <FontAwesomeIcon icon={faHeart} />
   return (
     <>
       <header
@@ -30,7 +43,7 @@ const App = () => {
 
       <main>
         <section id="about">
-          <h2>About Me</h2>
+          <h2>Who I am:</h2>
           <p className="second-font">
             I'm a language nerd at heart. In college, my idea of a fun Saturday
             night was pouring over French textbooks to try mastering the proper
@@ -74,7 +87,7 @@ const App = () => {
         <br />
 
         <section id="projects">
-          <h2>Projects</h2>
+          <h2>What I've done:</h2>
           <div className="project-container">
             <div className="project-item">
               <h3>GameStarter</h3>
@@ -96,6 +109,7 @@ const App = () => {
                   https://github.com/jessicaevans17/capstone-project
                 </a>
               </p>
+
               <p>
                 <strong>Live Site: </strong>{" "}
                 <a
@@ -140,12 +154,34 @@ const App = () => {
         <br />
 
         <section id="contact">
-          <h2>Contact</h2>
+          <h2>Let's Connect!</h2>
+
+          <div className="social-media">
+            <div>
+              <a href="mailto:jevansdev@gmail.com">{envelope}</a>
+            </div>
+            <div>
+              <a href="https://github.com/jessicaevans17">{gitHub}</a>
+            </div>
+            <div>
+              <a href="https://www.linkedin.com/in/jessica-marie-evans/">
+                {linkedIn}
+              </a>
+            </div>
+          </div>
+          <p>
+            <a href={Resume} download>
+              {" "}
+              {download} Resume
+            </a>
+          </p>
         </section>
       </main>
 
       <footer>
-        <p>Made with hearts by Jessica Evans</p>
+        <p>
+          Made with <span className="red">{heart} </span> by Jessica Evans
+        </p>
       </footer>
     </>
   )

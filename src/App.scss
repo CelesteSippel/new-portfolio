@@ -5,17 +5,24 @@
 body {
   margin: 0rem;
   font-family: "Lobster Two", cursive;
+  min-height: 100%;
 }
 .second-font {
   font-family: "Slabo 27px", serif;
 }
 
+.red {
+  color: red;
+}
+
 header {
   @include flex-column;
-  height: 320px;
+  height: 217px;
+  margin-top: 6rem;
   main {
     @include flex-row;
     justify-content: space-between;
+
     h3 {
       margin-left: 1rem;
       text-align: center;
@@ -37,6 +44,12 @@ nav {
   justify-content: space-between;
   align-items: center;
   background-color: rgb(251, 249, 249);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 100%;
+  height: 100px;
 
   .title {
     margin-left: 1rem;
@@ -90,4 +103,29 @@ main {
       }
     }
   }
+}
+
+#contact {
+  @include flex-column;
+  p {
+    font-size: 1.5rem;
+    a {
+      text-decoration: none;
+      color: green;
+    }
+  }
+  align-items: center;
+  .social-media {
+    @include flex-row;
+    font-size: 2rem;
+    a {
+      margin: 0rem 1rem;
+      text-decoration: none;
+      color: rgb(92, 0, 128);
+    }
+  }
+}
+
+footer {
+  text-align: center;
 }
