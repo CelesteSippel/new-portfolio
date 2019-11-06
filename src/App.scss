@@ -1,0 +1,93 @@
+@import "mixins.scss";
+@import url("https://fonts.googleapis.com/css?family=Lobster+Two&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Slabo+27px&display=swap");
+
+body {
+  margin: 0rem;
+  font-family: "Lobster Two", cursive;
+}
+.second-font {
+  font-family: "Slabo 27px", serif;
+}
+
+header {
+  @include flex-column;
+  height: 320px;
+  main {
+    @include flex-row;
+    justify-content: space-between;
+    h3 {
+      margin-left: 1rem;
+      text-align: center;
+      color: black;
+      text-shadow: 1px 1px 0 white;
+    }
+    img {
+      width: 7rem;
+      align-self: flex-end;
+      margin: 1rem;
+      border: solid black 1px;
+      border-radius: 6rem;
+    }
+  }
+}
+
+nav {
+  @include flex-row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(251, 249, 249);
+
+  .title {
+    margin-left: 1rem;
+  }
+}
+
+main {
+  section {
+    margin: 0rem 1rem;
+  }
+
+  h2 {
+    text-decoration: underline;
+  }
+}
+
+#skills {
+  @include flex-column;
+  align-items: center;
+  ul {
+    list-style: none;
+    @include flex-row;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 0rem;
+    li {
+      margin: 0.5rem;
+      border: solid black 1px;
+      padding: 0.5rem;
+      border-radius: 10px;
+      background-color: #aec8ab;
+      box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.75);
+    }
+  }
+}
+
+#projects {
+  @include flex-column;
+  align-items: center;
+  .project-container {
+    .project-item {
+      @include flex-column;
+      img {
+        width: 9rem;
+        border: solid black 1px;
+        padding: 0.5rem;
+        border-radius: 8px;
+        background-color: rgb(21, 66, 15);
+        margin-bottom: 1rem;
+        align-self: center;
+      }
+    }
+  }
+}
