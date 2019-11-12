@@ -6,6 +6,9 @@ body {
   margin: 0rem;
   font-family: "Lobster Two", cursive;
   min-height: 100%;
+  h2 {
+    margin-top: 0rem;
+  }
 }
 .second-font {
   font-family: "Slabo 27px", serif;
@@ -15,19 +18,27 @@ body {
   color: red;
 }
 
+.bottom-border {
+  border-bottom: solid black 1px;
+  padding-bottom: 0.5rem;
+}
 header {
   @include flex-column;
   height: 217px;
   margin-top: 6rem;
+  background: url("./images/backsplash9.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+
   main {
     @include flex-row;
     justify-content: space-between;
+    margin-top: 0.5rem;
 
     h3 {
       margin-left: 1rem;
       text-align: center;
       color: black;
-      text-shadow: 1px 1px 0 white;
     }
     img {
       width: 7rem;
@@ -35,6 +46,20 @@ header {
       margin: 1rem;
       border: solid black 1px;
       border-radius: 6rem;
+    }
+    .headline {
+      @include flex-column;
+      align-items: center;
+      margin: 0.5rem;
+      text-align: center;
+      color: white;
+      h2 {
+        text-decoration: none;
+        font-size: 2rem;
+      }
+      h3 {
+        color: white;
+      }
     }
   }
 }
@@ -121,7 +146,7 @@ main {
     a {
       margin: 0rem 1rem;
       text-decoration: none;
-      color: rgb(92, 0, 128);
+      color: rgb(237, 187, 76);
     }
   }
 }

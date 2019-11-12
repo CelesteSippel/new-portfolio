@@ -1,5 +1,5 @@
 import React from "react"
-import { Link, animateScroll as scroll } from "react-scroll"
+import { Link } from "react-scroll"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faBars } from "@fortawesome/free-solid-svg-icons"
 
@@ -7,13 +7,13 @@ const nav = () => {
   const bars = <FontAwesomeIcon icon={faBars} />
   return (
     <>
-      <nav>
+      <nav className="bottom-border">
         <div className="title">
           <h1>Jessica Evans</h1>
         </div>
-        <div class="dropdown">
-          <button class="dropbtn">{bars}</button>
-          <div class="dropdown-content">
+        <div className="dropdown">
+          <button className="dropbtn">{bars}</button>
+          <div className="dropdown-content">
             <Link
               activeClass="active"
               to="about"

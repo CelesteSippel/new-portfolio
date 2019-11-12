@@ -1,5 +1,4 @@
-import React, { useState } from "react"
-import Backsplash from "./images/backsplash.jpg"
+import React, { useEffect, useState } from "react"
 import Nav from "./components/nav"
 import Profile from "./images/profile.jpg"
 import GameStarter from "./images/GameStarter.gif"
@@ -19,30 +18,42 @@ const App = () => {
   const download = <FontAwesomeIcon icon={faDownload} />
   const envelope = <FontAwesomeIcon icon={faEnvelope} />
   const heart = <FontAwesomeIcon icon={faHeart} />
+  const taglines = ["Front-End Developer", "Puzzle-solver", "Cat-Cuddler"]
+
+  const [currentIndex, setCurrentIndex] = useState(0)
+
+  const nextTagLine = () => {
+    setInterval(() => {
+      if (currentIndex > taglines.length - 2) {
+        setCurrentIndex(0)
+      } else {
+        setCurrentIndex(currentIndex + 1)
+      }
+    }, 3000)
+  }
+  console.log({ currentIndex })
+
+  useEffect(() => {
+    const interval = nextTagLine()
+    clearInterval(interval)
+  }, [currentIndex])
+
   return (
     <>
-      <header
-        style={{
-          backgroundImage: `url(${Backsplash})`,
-          backgroundRepeat: "no-repeat",
-          backgroundSize: "cover"
-        }}
-      >
+      <header>
         <Nav />
         <main>
-          <h3 className="second-font">
-            {" "}
-            Hi! I'm Jessica, a front-end developer living in beautiful St.Pete,
-            FL!{" "}
-          </h3>
-
           <img src={Profile} alt="Jessica" />
+          <div className="headline">
+            <h2 className="second-font">I'm Jessica Evans</h2>
+            <h3>{taglines[currentIndex]}</h3>
+          </div>
         </main>
       </header>
       <br />
 
       <main>
-        <section id="about">
+        <section id="about" className="bottom-border">
           <h2>Who I am:</h2>
           <p className="second-font">
             I'm a language nerd at heart. In college, my idea of a fun Saturday
@@ -67,7 +78,7 @@ const App = () => {
 
         <br />
 
-        <section id="skills">
+        <section id="skills" className="bottom-border">
           <h2>I have experience with: </h2>
           <ul className="second-font">
             <li>HTML5</li>
@@ -86,7 +97,7 @@ const App = () => {
 
         <br />
 
-        <section id="projects">
+        <section id="projects" className="bottom-border">
           <h2>What I've done:</h2>
           <div className="project-container">
             <div className="project-item">
